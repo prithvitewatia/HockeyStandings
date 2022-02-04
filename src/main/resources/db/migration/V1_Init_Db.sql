@@ -52,14 +52,14 @@ CREATE TABLE hockey_coach(
     name VARCHAR(255) NOT NULL,
     age int8 NOT NULL,
     experience int8 NOT NULL DEFAULT,
-    teamId int8 NOT NULL,
+    teamId int8 ,
     PRIMARY KEY(id));
 
 CREATE TABLE hockey_players(
     id int8 NOT NULL DEFAULT nextval('hockey_players_id_seq'),
     name VARCHAR(255) NOT NULL,
     age int8 NOT NULL,
-    teamId int8 NOT NULL,
+    teamId int8,
     PRIMARY KEY(id));
 
 CREATE TABLE hockey_tournament_winner(
@@ -90,36 +90,36 @@ CREATE TABLE hockey_tournament_result(
 
 ALTER TABLE if EXISTS hockey_players
 ADD CONSTRAINT hockey_team_fk
-FOREIGN KEY(teamId) REFERENCES hockey_team(id);
+FOREIGN KEY(teamId) REFERENCES hockey_team(id) on delete set NULL on update cascade;
 
 ALTER TABLE if EXISTS hockey_coach
 ADD CONSTRAINT hockey_team_fk
-FOREIGN KEY(teamId) REFERENCES hockey_team(id);
+FOREIGN KEY(teamId) REFERENCES hockey_team(id) on delete set NULL ;
 
 ALTER TABLE if EXISTS hockey_tournament_winner
 ADD CONSTRAINT hockey_tour_fk
-FOREIGN KEY (tourId) REFERENCES hockey_tournament(id);
+FOREIGN KEY (tourId) REFERENCES hockey_tournament(id) on delete cascade on update cascade;
 
 ALTER TABLE if EXISTS hockey_tournament_winner
 ADD CONSTRAINT hockey_team_fk
-FOREIGN KEY (teamId) REFERENCES hockey_team(id);
+FOREIGN KEY (teamId) REFERENCES hockey_team(id) on delete set NULL on update cascade;
 
 ALTER TABLE if EXISTS hockey_match
 ADD CONSTRAINT homeId_fk
-FOREIGN KEY (homeId) REFERENCES hockey_team(id);
+FOREIGN KEY (homeId) REFERENCES hockey_team(id) on delete set NULL on update cascade;
 
 ALTER TABLE if EXISTS hockey_match
 ADD CONSTRAINT awayId_fk
-FOREIGN KEY(awayId) REFERENCES hockey_team(id);
+FOREIGN KEY(awayId) REFERENCES hockey_team(id) on delete set NULL on update cascade;
 
 ALTER TABLE if EXISTS hockey_match
 ADD CONSTRAINT tourId_fk
-FOREIGN KEY (tourId) REFERENCES hockey_tournament(id);
+FOREIGN KEY (tourId) REFERENCES hockey_tournament(id) on delete cascade on update cascade;
 
 ALTER TABLE if EXISTS hockey_tournament_result
 ADD CONSTRAINT teamId_fk
-FOREIGN KEY (teamId) REFERENCES hockey_team(id);
+FOREIGN KEY (teamId) REFERENCES hockey_team(id) on delete set NULL on update cascade;
 
 ALTER TABLE if EXISTS hockey_tournament_result
 ADD CONSTRAINT tourId_fk
-FOREIGN KEY (tourId) REFERENCES hockey_tournament(id);
+FOREIGN KEY (tourId) REFERENCES hockey_tournament(id) on delete cascade on update cascade;
