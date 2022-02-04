@@ -35,18 +35,21 @@ CREATE SEQUENCE hockey_match_id_seq
     CACHE 1;
 -- Creating tables
 
+-- This table is created to store basic details about a tournament
 CREATE TABLE hockey_tournament(
     id int8 NOT NULL DEFAULT nextval('hockey_tournament_id_seq'),
     name VARCHAR(255) NOT NULL,
     year int8 NOT NULL,
     PRIMARY KEY(id));
-
+-- This table is created to store basic details about a team
 CREATE TABLE hockey_team(
     id int8 NOT NULL DEFAULT nextval('hockey_team_id'),
     name VARCHAR(255) NOT NULL,
     owner VARCHAR(255) NOT NULL,
     PRIMARY KEY(id));
 
+-- This table is created to store basic details about a coach and which team
+-- is he/she associated with.
 CREATE TABLE hockey_coach(
     id int8 NOT NULL DEFAULT nextval('hockey_coach_id_seq'),
     name VARCHAR(255) NOT NULL,
@@ -55,6 +58,8 @@ CREATE TABLE hockey_coach(
     teamId int8 ,
     PRIMARY KEY(id));
 
+-- This table is created to store basic details about a player and which team
+-- is he/she associated with.
 CREATE TABLE hockey_players(
     id int8 NOT NULL DEFAULT nextval('hockey_players_id_seq'),
     name VARCHAR(255) NOT NULL,
@@ -62,11 +67,13 @@ CREATE TABLE hockey_players(
     teamId int8,
     PRIMARY KEY(id));
 
+-- This table stores the winner of each tournament
 CREATE TABLE hockey_tournament_winner(
     tourId int8 NOT NULL,
     teamId int8 NOT NULL,
     PRIMARY KEY(tourId,teamId));
 
+-- This table stores the details of a particular match in a tournament
 CREATE TABLE hockey_match(
     id int8 NOT NULL DEFAULT nextval('hockey_match_id_seq'),
     match_date DATE,
@@ -77,6 +84,7 @@ CREATE TABLE hockey_match(
     scoreAway int8 NOT NULL DEFAULT
     PRIMARY KEY(id));
 
+-- This table actually creates standings of teams in a tournament.
 CREATE TABLE hockey_tournament_result(
     teamId int8 NOT NULL,
     tourId int8 NOT NULL,
