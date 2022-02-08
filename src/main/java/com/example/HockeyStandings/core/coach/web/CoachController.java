@@ -2,10 +2,15 @@ package com.example.HockeyStandings.core.coach.web;
 
 import com.example.HockeyStandings.core.coach.Coach;
 import com.example.HockeyStandings.core.coach.CoachService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/coach")
@@ -26,7 +31,7 @@ public class CoachController {
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @ResposneBody
+    @ResponseBody
     public CoachView create(@RequestBody @Valid CoachBaseReq req){
         return service.create(req);
     }
