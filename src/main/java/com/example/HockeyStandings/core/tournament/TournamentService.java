@@ -45,7 +45,7 @@ public class TournamentService {
         });
         return new PageImpl<>(tournamentViewList,pageable,tournaments.getTotalElements());
     }
-    public Tournament prepare(Tournament tournament,TournamentBaseReq tournamentBaseReq){
+    private Tournament prepare(Tournament tournament,TournamentBaseReq tournamentBaseReq){
         tournament.setName(tournamentBaseReq.getName());
         tournament.setYear(tournamentBaseReq.getYear());
         return tournament;
