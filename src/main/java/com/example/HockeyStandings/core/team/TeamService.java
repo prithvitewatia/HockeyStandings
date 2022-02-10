@@ -62,8 +62,8 @@ public class TeamService {
         }
     }
     public TeamView update(Team team,TeamBaseReq teamBaseReq){
-        Team newTeam=this.prepare(team,teamBaseReq);
-        Team teamSave=teamRepo.save(newTeam);
+        Team updateTeam=this.prepare(team,teamBaseReq);
+        Team teamSave=teamRepo.save(updateTeam);
         return teamToTeamViewConverter.convert(teamSave);
     }
     private Team prepare(Team team, TeamBaseReq teamBaseReq){
