@@ -72,7 +72,7 @@ public class CoachService {
     }
     public CoachView update(Coach coach,CoachBaseReq coachBaseReq){
         Coach updateCoach=this.prepare(coach,coachBaseReq);
-        Coach coachSave=coachRepo.save(coach);
-        return coachToCoachViewConverter.convert(coach);
+        Coach coachSave=coachRepo.save(updateCoach);
+        return coachToCoachViewConverter.convert(coachSave);
     }
 }
