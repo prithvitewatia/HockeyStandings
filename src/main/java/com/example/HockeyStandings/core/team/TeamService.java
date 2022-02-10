@@ -66,7 +66,7 @@ public class TeamService {
         Team teamSave=teamRepo.save(newTeam);
         return teamToTeamViewConverter.convert(teamSave);
     }
-    public Team prepare(Team team, TeamBaseReq teamBaseReq){
+    private Team prepare(Team team, TeamBaseReq teamBaseReq){
         team.setName(teamBaseReq.getName());
         team.setOwner(teamBaseReq.getOwner());
         return team;
