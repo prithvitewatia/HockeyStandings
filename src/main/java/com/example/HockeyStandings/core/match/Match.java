@@ -27,18 +27,18 @@ public class Match {
     private Long id;
     @Column(name = "match_date")
     private LocalDate matchDate;
-    @Column(name = "homeId")
-    @JoinColumn(name = "teamId")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "homeid")
     private Team homeTeam;
-    @Column(name = "awayId")
-    @JoinColumn(name = "teamId")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "awayid")
     private Team awayTeam;
-    @Column(name = "tourId")
-    @JoinColumn(name = "id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "tourid")
     private Tournament tournament;
-    @Column(name = "scoreHome")
+    @Column(name = "scorehome")
     private int homeScore;
-    @Column(name = "scoreAway")
+    @Column(name = "scoreaway")
     private int awayScore;
     public Long getId(){
         return id;

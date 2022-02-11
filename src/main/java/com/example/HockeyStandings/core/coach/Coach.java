@@ -28,8 +28,8 @@ public class Coach {
     private int age;
     @Column(name = "experience")
     private int experience;
-    @OneToOne
-    @JoinColumn(name = "teamId")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "teamid")
     private Team team;
 
     public long getId(){

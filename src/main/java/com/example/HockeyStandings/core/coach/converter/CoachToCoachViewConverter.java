@@ -20,6 +20,7 @@ public class CoachToCoachViewConverter implements Converter<Coach,CoachView> {
     public CoachView convert(@NotNull Coach coach){
         CoachView view=new CoachView();
         view.setId(coach.getId());
+        view.setName(coach.getName());
         view.setAge(coach.getAge());
         view.setExperience(coach.getExperience());
         Team team=coach.getTeam();
