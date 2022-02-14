@@ -34,7 +34,7 @@ public class TournamentService {
     }
     public Tournament findTournamentOrThrow(Long id){
         return tournamentRepo.findById(id).orElseThrow(()->new EntityNotFoundException(
-                messageUtil.getMessage("tournament.not found",id)
+                messageUtil.getMessage("tournament.NotFound",id)
         ));
     }
     public Page<TournamentView> findAllTournament(Pageable pageable){
@@ -45,7 +45,7 @@ public class TournamentService {
         });
         return new PageImpl<>(tournamentViewList,pageable,tournaments.getTotalElements());
     }
-    public Tournament prepare(Tournament tournament,TournamentBaseReq tournamentBaseReq){
+    private Tournament prepare(Tournament tournament,TournamentBaseReq tournamentBaseReq){
         tournament.setName(tournamentBaseReq.getName());
         tournament.setYear(tournamentBaseReq.getYear());
         return tournament;
@@ -61,7 +61,7 @@ public class TournamentService {
         try{
             tournamentRepo.deleteById(id);
         }catch (EmptyResultDataAccessException e){
-            throw new EntityNotFoundException(messageUtil.getMessage("tournament.not found",id));
+            throw new EntityNotFoundException(messageUtil.getMessage("tournament.NotFound",id));
         }
     }
     public TournamentView update(Tournament tournament,TournamentBaseReq tournamentBaseReq){

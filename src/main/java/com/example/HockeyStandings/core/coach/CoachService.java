@@ -37,7 +37,7 @@ public class CoachService {
     }
     public Coach findCoachOrThrow(Long id){
         return coachRepo.findById(id)
-                .orElseThrow(()->new EntityNotFoundException(messageUtil.getMessage("coach.not found",id)));
+                .orElseThrow(()->new EntityNotFoundException(messageUtil.getMessage("coach.NotFound",id)));
     }
     public Page<CoachView> findAllCoach(Pageable pageable){
         Page<Coach> coaches=coachRepo.findAll(pageable);
@@ -67,12 +67,12 @@ public class CoachService {
         try{
             coachRepo.deleteById(id);
         }catch (EmptyResultDataAccessException e){
-            throw new EntityNotFoundException(messageUtil.getMessage("coach.notFound",id));
+            throw new EntityNotFoundException(messageUtil.getMessage("coach.NotFound",id));
         }
     }
     public CoachView update(Coach coach,CoachBaseReq coachBaseReq){
         Coach updateCoach=this.prepare(coach,coachBaseReq);
-        Coach coachSave=coachRepo.save(coach);
-        return coachToCoachViewConverter.convert(coach);
+        Coach coachSave=coachRepo.save(updateCoach);
+        return coachToCoachViewConverter.convert(coachSave);
     }
 }
