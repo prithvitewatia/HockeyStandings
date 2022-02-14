@@ -50,7 +50,7 @@ public class MatchService {
     }
     public Match findMatchOrThrow(Long id){
         return matchRepo.findById(id).orElseThrow(
-                ()->new EntityNotFoundException(messageUtil.getMessage("match.not found",id))
+                ()->new EntityNotFoundException(messageUtil.getMessage("match.NotFound",id))
         );
     }
     public Page<MatchView> findAllMatch(Pageable pageable){
@@ -80,7 +80,7 @@ public class MatchService {
         try {
             matchRepo.deleteById(id);
         }catch (EmptyResultDataAccessException e){
-            throw new EntityNotFoundException(messageUtil.getMessage("match. not found",id));
+            throw new EntityNotFoundException(messageUtil.getMessage("match.NotFound",id));
         }
     }
     public MatchView update(Match match,MatchBaseReq matchBaseReq){
