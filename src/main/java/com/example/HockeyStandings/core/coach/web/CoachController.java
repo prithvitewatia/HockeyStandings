@@ -29,7 +29,7 @@ public class CoachController {
     public Page<CoachView> getAllCoaches(@PageableDefault(sort="id",direction=Sort.Direction.ASC) Pageable pageable){
         return service.findAllCoach(pageable);
     }
-    @PostMapping
+    @PostMapping(consumes = {"application/json"},produces = {"application/json"})
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
     public CoachView create(@RequestBody @Valid CoachBaseReq req){
@@ -40,7 +40,7 @@ public class CoachController {
     public void deleteCoach(@PathVariable Long id){
         service.delete(id);
     }
-    @PutMapping("/{id}")
+    @PutMapping(path = "/{id}",consumes = {"application/json"},produces = {"application/json"})
     public CoachView updateCoach(@PathVariable(name="id") Long id,
                                  @RequestBody @Valid CoachBaseReq req){
         Coach coach= service.findCoachOrThrow(id);
