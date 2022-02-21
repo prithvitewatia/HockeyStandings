@@ -3,13 +3,14 @@ package com.example.HockeyStandings.core.coach.web;
 import com.example.HockeyStandings.base.BaseRequest;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class CoachBaseReq extends BaseRequest {
     @NotEmpty
     private String name;
-    @NotEmpty
+    @NotNull
     private int age;
-    @NotEmpty
+    @NotNull
     private int experience;
     private Long teamId;
 
