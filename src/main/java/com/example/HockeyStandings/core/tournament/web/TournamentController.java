@@ -24,6 +24,7 @@ public class TournamentController {
     public TournamentView getTournament(@PathVariable Long id){
         return tournamentService.getTournament(id);
     }
+    // Gets detail about all the tournaments.
     @GetMapping
     @ResponseBody
     public Page<TournamentView> getAllTournament(@PageableDefault(sort = "id",direction = Sort.Direction.ASC)
