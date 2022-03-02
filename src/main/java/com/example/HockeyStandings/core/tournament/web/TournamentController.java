@@ -18,6 +18,7 @@ public class TournamentController {
     public TournamentController(TournamentService tournamentService){
         this.tournamentService=tournamentService;
     }
+    // Gets detail about a particular tournament by I'd.
     @GetMapping("/{id}")
     @ResponseBody
     public TournamentView getTournament(@PathVariable Long id){
