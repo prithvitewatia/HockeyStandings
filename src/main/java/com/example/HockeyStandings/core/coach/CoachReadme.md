@@ -9,8 +9,8 @@
 
     Example for single coach:
 
-[img]
+![Single Coach](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/singleCoach.png)
 
     Example for all coach:
 
-[img]
+![All Coach](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/AllCoach.png)

@@ -10,7 +10,7 @@
 
     Example for single player:
 
-[Img]
+![Single Player](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/SinglePlayer.png)
     
     Example for all players
-[img]
+![All Player](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/AllPlayer.png)

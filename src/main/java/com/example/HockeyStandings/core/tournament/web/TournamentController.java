@@ -18,11 +18,15 @@ public class TournamentController {
     public TournamentController(TournamentService tournamentService){
         this.tournamentService=tournamentService;
     }
+    // Gets detail about a particular tournament by I'd.
     @GetMapping("/{id}")
     @ResponseBody
     public TournamentView getTournament(@PathVariable Long id){
         return tournamentService.getTournament(id);
     }
+    // Gets detail about all the tournaments.
+    @GetMapping
+    @ResponseBody
     public Page<TournamentView> getAllTournament(@PageableDefault(sort = "id",direction = Sort.Direction.ASC)
                                                  Pageable pageable){
         return tournamentService.findAllTournament(pageable);

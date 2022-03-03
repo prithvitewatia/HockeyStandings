@@ -8,7 +8,7 @@
     a single tournament or all tournament depending on the requirement.
 
     Example for single tournament:
-[Img]
+![Single Tournament](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/SingleTournament.png)
 
     Example for all tournament:
-[Img]
+![All Tournament](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/AllTournament.png)
