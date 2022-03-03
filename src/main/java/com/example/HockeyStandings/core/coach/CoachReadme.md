@@ -13,4 +13,4 @@
 
     Example for all coach:
 
-![All Coach](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/singleCoach.png)
+![All Coach](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/AllCoach.png)
