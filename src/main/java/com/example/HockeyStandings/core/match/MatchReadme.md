@@ -8,7 +8,7 @@
     a single match or all match depending on the requirement.
 
     Example for single match:
-[Img]
+![Single Match](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/SingleMatch.png)
 
     Example for all matches:
-[Img]
+![All Match](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/AllMatch.png)
