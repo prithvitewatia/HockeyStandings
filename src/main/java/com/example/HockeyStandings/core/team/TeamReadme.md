@@ -8,7 +8,7 @@
     a single team or all team depending on the requirement.
 
     Example for single team:
-[Img]
+![Single Team](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/SingleTeam.png)
 
     Example for all team:
-[Img]
+![All Team](https://github.com/prithvitewatia/HockeyStandings/blob/dev/assets/imgs/AllTeam.png)
